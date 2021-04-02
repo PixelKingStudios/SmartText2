@@ -2,14 +2,14 @@ local SmartText = {}
 
 function SmartText.new(txt)
 	local this = {class = 'SmartText', text = txt or ''}
-
+	
 	setmetatable(this, {
 		__index = this;
 		
 		__tostring = function ()
 			return this.text
 		end;
-			
+		
 		__concat = function (a, b)
 			if type(a) == 'string' or type(b) == 'string' then
 				return a == this and this.text .. b or a .. this.text
@@ -18,7 +18,7 @@ function SmartText.new(txt)
 					return SmartText.new(a.text .. b.text)
 				end
 			end
-				
+			
 			return warn 'Attmept to concat class invalid'
 		end
 	})
@@ -74,7 +74,6 @@ function SmartText.new(txt)
 	end
 	
 	function this:ColorRGB(str, r, g, b)
-		
 		if b then
 			this.text = this.text .. '<font color="rgb(' .. r .. ',' .. g .. ',' .. b .. ')">' .. str .. '</font>'
 		else
