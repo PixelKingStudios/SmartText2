@@ -178,7 +178,7 @@ print(text.text) --> ''
 ## Sample Code
 Here are a few examples of how you can utilize SmartText2 in your projects.
 ### Sample #1
-A simple `Countdown()` function that uses SmartText2 to give is a nice, clean look.
+A simple `Countdown()` function that uses SmartText2 to give it a nice, clean look.
 ````lua
 -- LocalScript inside of a TextLabel
 
