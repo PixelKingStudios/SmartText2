@@ -24,7 +24,7 @@ Can be indexed to get/set the object's text property. Use this property to acces
 -- Example
 
 local text = SmartText2.new("This is some text!")
-print(text.text) --> This is some text!
+print(text.text) --> 'This is some text!'
 ````
 ### `property` `object.class`
 Can be indexed to get/set the object's class property. **DO NOT EDIT THIS PROPERTY**, as it's used internally by the module to handle the concatenation of more than one SmartText2 object.
@@ -35,9 +35,11 @@ If no argument is passed through the `text` parameter, the object's current text
 ````lua
 -- Example
 
-local text = SmartText.new("This is bold text"):Bold() --> <b>This is bold text</b>
+local text = SmartText.new("This is bold text"):Bold()
+print(text.text) --> '<b>This is bold text</b>'
 -- or
-local text = SmartText.new("This is "):Bold("bold text") --> This is <b>bold text</b>
+local text = SmartText.new("This is "):Bold("bold text")
+print(text.text) --> 'This is <b>bold text</b>'
 ````
 ### `function` `object:Italic(text)`
 Italicizes the object's text or concatenates italicized text to the object's text.
@@ -46,9 +48,11 @@ If no argument is passed through the `text` parameter, the object's current text
 ````lua
 -- Example
 
-local text = SmartText.new("This is italic text"):Italic() --> <i>This is italic text</i>
+local text = SmartText.new("This is italic text"):Italic()
+print(text.text) --> '<i>This is italic text</i>'
 -- or
-local text = SmartText.new("This is "):Italic("italic text") --> This is <i>italic text</i>
+local text = SmartText.new("This is "):Italic("italic text")
+print(text.text) --> 'This is <i>italic text</i>'
 ````
 ### `function` `object:Underline(text)`
 Underlines the object's text or concatenates underlined text to the object's text.
@@ -57,9 +61,11 @@ If no argument is passed through the `text` parameter, the object's current text
 ````lua
 -- Example
 
-local text = SmartText2.new("This is underline text"):Underline() --> <u>This is underline text</u>
+local text = SmartText2.new("This is underline text"):Underline()
+print(text.text) --> '<u>This is underline text</u>'
 -- or
-local text = SmartText2.new("This is "):Underline("underline text") --> This is <u>underline text</u>
+local text = SmartText2.new("This is "):Underline("underline text")
+print(text.text) --> 'This is <u>underline text</u>'
 ````
 ### `function` `object:Strike(text)`
 Strikethroughs the object's text or concatenates strikethrough text to the object's text.
@@ -68,9 +74,11 @@ If no argument is passed through the `text` parameter, the object's current text
 ````lua
 -- Example
 
-local text = SmartText2.new("This is strikethrough text"):Strike() --> <s>This is strikethrough text</s>
+local text = SmartText2.new("This is strikethrough text"):Strike()
+print(text.text) --> '<s>This is strikethrough text</s>'
 -- or
-local text = SmartText2.new("This is "):Strike("strikethrough text") --> This is <s>strikethrough text</s>
+local text = SmartText2.new("This is "):Strike("strikethrough text")
+print(text.text) --> 'This is <s>strikethrough text</s>'
 ````
 ### `function` `object:Size(text, size)`
 Sizes the object's text or concatenates sized text to the object's text.
@@ -79,9 +87,11 @@ If no argument is passed through the `text` parameter, the object's text will be
 ````lua
 -- Example
 
-local text = SmartText.new("This is big text"):Size(50) --> <font size="50">This is big text</font>
+local text = SmartText.new("This is big text"):Size(50)
+print(text.text) --> '<font size="50">This is big text</font>'
 -- or
-local text = SmartText.new("This is "):Size("big text", 50) --> This is <font size="50">big text</font>
+local text = SmartText.new("This is "):Size("big text", 50)
+print(text.text) --> 'This is <font size="50">big text</font>'
 ````
 ### `function` `object:ColorRGB(text, r, g, b)`
 Colors the object's text or concatenates colored text to the object's text. Uses RGB color format.
@@ -90,9 +100,11 @@ If no argument is passed through the `text` parameter, the object's current text
 ````lua
 -- Example
 
-local text = SmartText2.new("This is RGB colored text"):ColorRGB(0, 0, 0) --> <font color="rgb(0,0,0)">This is RGB colored text</font>
+local text = SmartText2.new("This is RGB colored text"):ColorRGB(0, 0, 0)
+print(text.text) --> '<font color="rgb(0,0,0)">This is RGB colored text</font>'
 -- or
-local text = SmartText2.new("This is "):ColorRGB("RGB colored text", 0, 0, 0) --> This is <font color="rgb(0,0,0)">RGB colored text</font>
+local text = SmartText2.new("This is "):ColorRGB("RGB colored text", 0, 0, 0)
+print(text.text) --> 'This is <font color="rgb(0,0,0)">RGB colored text</font>'
 ````
 ### `function` `object:ColorHEX(text, hex)`
 Colors the object's text or concatenates colored text to the object's text. Uses HEX color format.
@@ -101,9 +113,11 @@ If no argument is passed through the `text` parameter, the object's current text
 ````lua
 -- Example
 
-local text = SmartText2.new("This is HEX colored text"):ColorHEX("#000000") --> <font color="#000000">This is HEX colored text</font>
+local text = SmartText2.new("This is HEX colored text"):ColorHEX("#000000")
+print(text.text) --> '<font color="#000000">This is HEX colored text</font>'
 -- or
-local text = SmartText2.new("This is "):ColorHEX("HEX colored text", "#000000") --> This is <font color="#000000">HEX colored text</font>
+local text = SmartText2.new("This is "):ColorHEX("HEX colored text", "#000000")
+print(text.text) --> 'This is <font color="#000000">HEX colored text</font>'
 ````
 ### `function` `object:Face(text, face)`
 Changes the font of the object's text or concatenates text with a font to the object's text.
@@ -112,35 +126,54 @@ If no argument is passed through the `text` parameter, the object's current text
 ````lua
 -- Example
 
-local text = SmartText2.new("This is SourceSans"):Face("SourceSans") --> <font face="SourceSans">This is SourceSans</font>
+local text = SmartText2.new("This is SourceSans"):Face("SourceSans")
+print(text.text) --> '<font face="SourceSans">This is SourceSans</font>'
 -- or
-local text = SmartText2.new("This is "):Face("SourceSans", "SourceSans") --> This is <font face="SourceSans">SourceSans</font>
+local text = SmartText2.new("This is "):Face("SourceSans", "SourceSans")
+print(text.text) --> 'This is <font face="SourceSans">SourceSans</font>'
 ````
 ### `function` `object:Concat(text)`
 Concatenates a string to the object's text. If no argument is passed through the `text` parameter, it will concatenate a singular space `" "`.
 ````lua
 -- Example
 
-local text = SmartText2.new("Some text."):Concat(" More text!") --> Some text. More text!
+local text = SmartText2.new("This is some text!"):Concat(" More text!")
+print(text.text) --> 'This is some text! More text!'
 ````
-Can also be concatenated to another string directly using `..`. This will, however, return as a string
+Can also be concatenated to another string directly using `..`. This will, however, return as a string.
 ````lua
-local text1 = SmartText.new("Some text.")
+-- Example
+
+local text1 = SmartText.new("This is some text!")
 local text2 = text1 .. " More text!" -- returns a string
+
+print(text2) --> 'This is some text! More text!'
+````
+Can also be concatenated with another SmartText2 text object using `..` as well. This will return a new SmartText2 text object.
+````lua
+-- Example
+
+local text1 = SmartText2.new("This is some text! ")
+local text2 = SmartText2.new("More text!")
+local text3 = text1 .. text2 -- returns a new SmartText2 text object
+
+print(text3.text) --> 'This is some text! More text!'
 ````
 ### `function` `object:Set(text)`
 Clears the object's current text and replaces it with the new text. If no argument is passed through the 'text' parameter, it will set the text to an empty string `""`.
 ````lua
 -- Example
 
-local text = SmartText.new("Text"):Set("Different text") --> Different text
+local text = SmartText.new("Text"):Set("Different text")
+print(text.text) --> 'Different text'
 ````
 ### `function` `object:Clear()`
 Resets the object's text back to an empty string `""`.
 ````lua
 -- Example
 
-local text = SmartText2.new("This is some text!"):Clear() --> (empty string)
+local text = SmartText2.new("This is some text!"):Clear()
+print(text.text) --> ''
 ````
 ## Sample Code
 Here are a few examples of how you can utilize SmartText2 in your projects.
