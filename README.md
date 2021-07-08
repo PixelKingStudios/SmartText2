@@ -1,3 +1,5 @@
+#### [<-- Home](https://pixelkingstudios.github.io/Home/)
+
 # SmartText2 | Documentation
 
 [Learn how to setup and use SmartText2 here](https://devforum.roblox.com/t/smarttext2-module-for-automatic-richtext-formatting/1145998)
